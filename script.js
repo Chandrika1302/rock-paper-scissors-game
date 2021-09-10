@@ -15,9 +15,8 @@ for (let i = 0; i < numOfButtons; i++) {
     [i].addEventListener("click", function () {
       var buttonInnerHTML = this.innerHTML;
       let playerSelection = buttonInnerHTML;
-      playerSelectn.innerHTML = "Player Selection is:" + " " + buttonInnerHTML;
-      computerSelectn.innerHTML =
-        "Computer Selection is:" + " " + computerplay();
+      playerSelectn.innerHTML = "Player Selection:" + " " + buttonInnerHTML;
+      computerSelectn.innerHTML = "Computer Selection:" + " " + computerplay();
       let computerSelection = computerplay();
       singleround(computerSelection, playerSelection);
       gameWinner();
@@ -30,37 +29,69 @@ function singleround(computerSelection, playerSelection) {
     console.log("Tie");
   } else if (computerSelection == "Rock" && playerSelection == "Paper") {
     computercount++;
-    computerScore.textContent = "computer score is:" + " " + computercount;
+    computerScore.innerHTML =
+      "<i class='fas fa-robot text-4xl'></i>" +
+      " " +
+      "Computer score:" +
+      " " +
+      computercount;
   } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
-    playercount++;
-    playerScore.textContent = "player score is:" + " " + playercount;
+    computercount++;
+    computerScore.innerHTML =
+      "<i class='fas fa-robot text-4xl'></i>" +
+      " " +
+      "Computer score:" +
+      " " +
+      computercount;
   } else if (computerSelection == "Paper" && playerSelection == "Rock") {
     playercount++;
-    playerScore.textContent = "player score is:" + " " + playercount;
+    playerScore.innerHTML =
+      "<i class='fas fa-user text-4xl'></i>" +
+      " " +
+      "Player score:" +
+      " " +
+      playercount;
   } else if (computerSelection == "Paper" && playerSelection == "Scissors") {
-    computercount++;
-    computerScore.textContent = "computer score is:" + " " + computercount;
-  } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
-    computercount++;
-    computerScore.textContent = "computer score is:" + " " + computercount;
-  } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
     playercount++;
-    playerScore.textContent = "player score is:" + " " + playercount;
+    playerScore.innerHTML =
+      "<i class='fas fa-user text-4xl'></i>" +
+      " " +
+      "Player score:" +
+      " " +
+      playercount;
+  } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
+    playercount++;
+    playerScore.innerHTML =
+      "<i class='fas fa-user text-4xl'></i>" +
+      " " +
+      "Player score:" +
+      " " +
+      playercount;
+  } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
+    computercount++;
+    computerScore.innerHTML =
+      "<i class='fas fa-robot text-4xl'></i>" +
+      " " +
+      "Computer score:" +
+      " " +
+      computercount;
   }
 }
 function gameWinner() {
   if (computercount > playercount) {
-    result.textContent = "computer Wins!!";
+    result.innerHTML = "Computer Wins!!";
   } else if (playercount > computercount) {
-    result.textContent = "Player Wins!!";
-  } else result.textContent = "Draw!!";
+    result.innerHTML = "Player Wins!!";
+  } else result.innerHTML = "Draw!!";
 }
-function resetGame(){
-  playercount=0;
-  computercount=0;
-  playerSelectn.textContent="Player Selection is: None";
-  computerSelectn.textContent="Computer Selection is: None";
-  playerScore.textContent="player score is: 0";
-  computerScore.textContent="computer score is: 0";
-  result.remove();
+function resetGame() {
+  playercount = 0;
+  computercount = 0;
+  playerSelectn.innerHTML = "Player Selection: None";
+  computerSelectn.innerHTML = "Computer Selection: None";
+  playerScore.innerHTML =
+    "<i class='fas fa-user text-4xl'></i>" + " " + "Player score: 0";
+  computerScore.innerHTML =
+    "<i class='fas fa-robot text-4xl'></i>" + " " + "Computer score: 0";
+  result.innerHTML = "";
 }

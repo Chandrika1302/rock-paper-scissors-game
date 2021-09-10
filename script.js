@@ -19,14 +19,14 @@ for (let i = 0; i < numOfButtons; i++) {
       computerSelectn.innerHTML = "Computer Selection:" + " " + computerplay();
       let computerSelection = computerplay();
       singleround(computerSelection, playerSelection);
-      gameWinner();
+      // gameWinner();
     });
 }
 let playercount = 0;
 let computercount = 0;
 function singleround(computerSelection, playerSelection) {
   if (computerSelection == playerSelection) {
-    console.log("Tie");
+    result.innerHTML = "Draw!!";
   } else if (computerSelection == "Rock" && playerSelection == "Paper") {
     computercount++;
     computerScore.innerHTML =
@@ -35,6 +35,7 @@ function singleround(computerSelection, playerSelection) {
       "Computer score:" +
       " " +
       computercount;
+    result.innerHTML = "Computer Wins!!";
   } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
     computercount++;
     computerScore.innerHTML =
@@ -43,6 +44,7 @@ function singleround(computerSelection, playerSelection) {
       "Computer score:" +
       " " +
       computercount;
+    result.innerHTML = "Computer Wins!!";
   } else if (computerSelection == "Paper" && playerSelection == "Rock") {
     playercount++;
     playerScore.innerHTML =
@@ -51,6 +53,7 @@ function singleround(computerSelection, playerSelection) {
       "Player score:" +
       " " +
       playercount;
+    result.innerHTML = "Player Wins!!";
   } else if (computerSelection == "Paper" && playerSelection == "Scissors") {
     playercount++;
     playerScore.innerHTML =
@@ -59,6 +62,7 @@ function singleround(computerSelection, playerSelection) {
       "Player score:" +
       " " +
       playercount;
+    result.innerHTML = "Player Wins!!";
   } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
     playercount++;
     playerScore.innerHTML =
@@ -67,6 +71,7 @@ function singleround(computerSelection, playerSelection) {
       "Player score:" +
       " " +
       playercount;
+    result.innerHTML = "Player Wins!!";
   } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
     computercount++;
     computerScore.innerHTML =
@@ -75,15 +80,16 @@ function singleround(computerSelection, playerSelection) {
       "Computer score:" +
       " " +
       computercount;
+    result.innerHTML = "Computer Wins!!";
   }
 }
-function gameWinner() {
-  if (computercount > playercount) {
-    result.innerHTML = "Computer Wins!!";
-  } else if (playercount > computercount) {
-    result.innerHTML = "Player Wins!!";
-  } else result.innerHTML = "Draw!!";
-}
+// function gameWinner() {
+//   if (computercount > playercount) {
+//     result.innerHTML = "Computer Wins!!";
+//   } else if (playercount > computercount) {
+//     result.innerHTML = "Player Wins!!";
+//   } else result.innerHTML = "Draw!!";
+// }
 function resetGame() {
   playercount = 0;
   computercount = 0;

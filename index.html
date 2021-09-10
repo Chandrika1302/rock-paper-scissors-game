@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <head>
+    <link href="./index.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/843f31a33f.js" crossorigin="anonymous"></script>
     <title>Rps-game</title>
+   
 
 </head>
-<body>
-    <button class="button">Rock</button>
-    <button class="button">Paper</button>
-    <button class="button">Scissors</button>
-    <button class="reset-btn" onclick="resetGame()">Reset</button>
+<body class="bg-gradient-to-r from-pink-200 to-pink-200 md-12 font-serif">
+    <h1 class="text-center text-4xl bg-pink-700 text-white p-4 text-5xl font-bold">Rock,Paper and Scissors</h1>
 
-    <div class="player-selectn">Player Selection is: None</div>
-    <div class="computer-selectn">Computer Selection is:None</div>
-    <div class="p-score">player score is: 0</div>
-    <div class="c-score">computer score is: 0</div>
+    <div class="m-12 text-2xl">
+    <div class="flex justify-between">
+        <div class="p-score"><i class="fas fa-user text-4xl"></i> Player score: 0</div>
+        <div class="c-score"><i class="fas fa-robot text-4xl"></i> Computer score: 0</div>
+    </div>
 
-    <div class="gameResult"></div>
+    <div class="mx-14">
+        <div class="grid grid-cols-3 gap-24 my-12 mx-36  xl:gap-12  sm:gap-4 "> 
+            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white ">Rock</button>
+            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Paper</button>
+            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Scissors</button>
+        </div>
+    
+    <div class="flex justify-between mx-36 text-2xl"> 
+    <div class="player-selectn">Player Selection: None</div>
+    <div class="computer-selectn">Computer Selection: None</div></div>
+
+    <div class="border-4 border-pink-400 text-center py-3 my-6 bg-white text-3xl w-3/5 m-auto">Result
+    <div class="gameResult text-5xl "></div>
+    </div>
+     <div class="flex justify-center"><button class="reset-btn bg-black hover:bg-gray-600 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl px-6 py-2 text-white mt-24" onclick="resetGame()">Reset</button></div>
+    </div>
     <script src="./script.js"></script>
-
+    </div>
 </body>

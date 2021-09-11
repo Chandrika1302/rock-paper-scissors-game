@@ -1,37 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link href="./index.css">
+    <!-- errornous css linking(missing the rel attribute) also unnessary because it is empty-->
+    <!-- <link href="./index.css"> -->
+
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/843f31a33f.js" crossorigin="anonymous"></script>
-    <title>Rps-game</title>
-   
 
+    <!-- misc meta tags, it's a good practice to add these -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rps-game</title>
 </head>
+
 <body class="bg-gradient-to-r from-pink-200 to-pink-200 md-12 font-serif">
     <h1 class="text-center text-4xl bg-pink-700 text-white p-4 text-5xl font-bold">Rock,Paper and Scissors</h1>
 
     <div class="m-12 text-2xl">
-    <div class="flex justify-between">
-        <div class="p-score"><i class="fas fa-user text-4xl"></i> Player score: 0</div>
-        <div class="c-score"><i class="fas fa-robot text-4xl"></i> Computer score: 0</div>
-    </div>
-
-    <div class="mx-14">
-        <div class="grid grid-cols-3 gap-24 my-12 mx-36  xl:gap-12  sm:gap-4 "> 
-            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white ">Rock</button>
-            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Paper</button>
-            <button class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Scissors</button>
+        <div class="flex justify-between">
+            <!-- better to use full names so to not confuse with tailwind stuff, IDs for js are better -->
+            <!-- also no need to target the container div, better to use a span  -->
+            <div><i class="fas fa-user text-4xl"></i> Player score: <span id="player-score">0</span> </div>
+            <div><i class="fas fa-robot text-4xl"></i>Computer score: <span id="computer-score">0</span> </div>
         </div>
-    
-    <div class="flex justify-between mx-36 text-2xl"> 
-    <div class="player-selectn">Player Selection: None</div>
-    <div class="computer-selectn">Computer Selection: None</div></div>
 
-    <div class="border-4 border-pink-400 text-center py-3 my-6 bg-white text-3xl w-3/5 m-auto">Result
-    <div class="gameResult text-5xl "></div>
+        <div class="mx-14">
+            <div class="grid grid-cols-3 gap-24 my-12 mx-36  xl:gap-12  sm:gap-4 ">
+                <button
+                    class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white ">Rock</button>
+                <button
+                    class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Paper</button>
+                <button
+                    class="button  bg-pink-600 hover:bg-pink-700 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl p-4 text-white">Scissors</button>
+            </div>
+
+            <div class="flex justify-between mx-36 text-2xl">
+                <!-- changed selectn to selection because saving two letters is not worth it in comparsion to the potential confusion it can cause during maintainence in future -->
+                <!-- also changed classes to IDs here because they are better for js -->
+                <div id="player-selection">Player Selection: None</div>
+                <div id="computer-selection">Computer Selection: None</div>
+            </div>
+
+            <div class="border-4 border-pink-400 text-center py-3 my-6 bg-white text-3xl w-3/5 m-auto">Result
+                <div id="game-result" class="text-5xl"></div>
+            </div>
+            <!-- remove reset game onClick function -->
+            <div class="flex justify-center"><button
+                    class="reset-btn bg-black hover:bg-gray-600 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl px-6 py-2 text-white mt-24"
+                    id="reset-button">Reset</button></div>
+        </div>
+
     </div>
-     <div class="flex justify-center"><button class="reset-btn bg-black hover:bg-gray-600 rounded transform hover:scale-110 motion-reduce:transform-none text-5xl px-6 py-2 text-white mt-24" onclick="resetGame()">Reset</button></div>
-    </div>
+    <!-- moved script here because it's more obvious for it to be at last -->
     <script src="./script.js"></script>
-    </div>
 </body>
+
+</html>

@@ -48,13 +48,13 @@ resetButton.addEventListener('click', resetGame);
 // new functions
 // better to have functions declared in the end, this is subjective too.
 function playRound(e) {
-  const PlayerSelectionText = e.target.innerText;
+  const playerSelectionText = e.target.innerText;
   const computerSelectionText = computerplay();
 
-  playerSelection.innerText = 'Player Selection: ' + PlayerSelectionText;
+  playerSelection.innerText = 'Player Selection: ' + playerSelectionText;
   computerSelection.innerText = 'Computer Selection: ' + computerSelectionText;
 
-  const resultText = findResult(computerSelectionText, PlayerSelectionText);
+  const resultText = findResult(computerSelectionText, playerSelectionText);
   displayResult(resultText);
   updateScores(resultText);
 }

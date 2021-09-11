@@ -130,8 +130,8 @@ function resetGame() {
   computerSelection.innerText = 'Computer Selection: None';
 
   // updated according to html changes
-  playerScore.innerText = 'Player score: 0';
-  computerScore.innerText = 'Computer score: 0';
+  playerScore.innerText = '0';
+  computerScore.innerText = '0';
 
   result.innerText = '';
 }
